@@ -1,0 +1,72 @@
+import React, { useState } from 'react';
+
+const App = () => {
+  const [count, setCount] = useState(0);
+  const [message, setMessage] = useState('');
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-violet-100 to-green-100 flex flex-col items-center justify-center p-6">
+      <div className="bg-white p-8 rounded-2xl shadow-xl w-full max-w-md">
+        
+        {/* Counter Section */}
+        <div className="text-center mb-8">
+          <h1 className="text-4xl font-bold text-violet-800 mb-2">{count}</h1>
+          <p className="text-center text-sm text-violet-200 uppercase tracking-widest mb-6"> ITPS205 Hands-on Quiz 2 </p>
+          <p className="text-center text-sm text-violet-200 uppercase tracking-widest mb-6"> Yeasha Mei P. Diño</p>
+          <p className="text-sm text-violet-500 uppercase tracking-widest mb-6"> Current Count </p>
+          
+          <div className="flex gap-4 justify-center">
+            <button 
+              onClick={() => setCount(count - 1)}
+              className="bg-violet-600 hover:bg-violet-700 text-white px-4 py-2 rounded-lg transition-all"
+            >
+              Decrease
+            </button>
+            <button 
+              onClick={() => setCount(count + 1)}
+              className="bg-violet-400 hover:bg-violet-500 text-white px-4 py-2 rounded-lg transition-all"
+            >
+              Increase
+            </button>
+            <button 
+              onClick={() => setCount(0)}
+              className="border-2 border-violet-200 text-violet-600 hover:bg-violet-50 px-4 py-2 rounded-lg transition-all"
+            >
+              Reset
+            </button>
+          </div>
+
+          {/* Conditional Rendering */}
+          <div className="h-8 mt-4"> 
+            {count >= 5 && (
+              <span className="text-green-600 font-bold animate-bounce block">
+                Success! Goal Reached!
+              </span>
+            )}
+          </div>
+        </div>
+
+        <div className="border-t border-violet-100 pt-6">
+          <label className="block text-sm font-medium text-violet-900 mb-2">
+            Custom Message
+          </label>
+          <input 
+            type="text" 
+            placeholder="Type here..." 
+            value={message} 
+            onChange={(e) => setMessage(e.target.value)} 
+            className="w-full p-3 border border-violet-200 rounded-xl focus:ring-2 focus:ring-green-400 focus:outline-none transition-all"
+          />
+          
+          <div className="mt-4 p-4 bg-green-50 rounded-lg border border-green-100">
+            <p className="text-xs text-green-700 font-semibold uppercase mb-1">Live Preview</p>
+            <p className="text-violet-800 break-words">Output: {message || "Nothing typed yet..."}</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  );
+};
+
+export default App;
