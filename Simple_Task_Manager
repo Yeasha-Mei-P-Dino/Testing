@@ -27,6 +27,8 @@ function App() {
         <div className="bg-violet-600 p-8 text-center">
           <h1 className="text-3xl font-bold text-white tracking-tight">Task Master</h1>
           <p className="text-emerald-200 text-sm mt-1">Organize your goals</p>
+          <p className="text-emerald-100 text-sm mt-1"> by Yeasha Mei P. Diño </p>
+
         </div>
 
         <div className="p-8">
